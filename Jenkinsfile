@@ -12,15 +12,16 @@ pipeline{
                 sh "git clone https://github.com/snehaos20/assignment3_multibranch.git -b 23Q2"
                 echo "cloning completed"
                  sh "sudo yum install httpd -y"
+                sh "chmod -R 777 /var/www/html"
                }
         }
         stage("deploying "){
             steps{
                 dir('/var/www/html'){
-                sh "systemctl start httpd"
+                sh "sudo systemctl start httpd"
                 sh "rm -rf *"
                 sh "cp /mnt/branch2/assignment3_multibranch/index.html /var/www/html/"
-                sh "chmod -R 777 /var/www/html"
+                
                 }
                 
             }
