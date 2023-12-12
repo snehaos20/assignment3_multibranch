@@ -6,7 +6,7 @@ pipeline{
         }
     }
     stages{
-        stage("cloning git 23Q1 branch"){
+        stage("cloning git 23Q2 branch"){
             steps{
                 sh "rm -rf *"
                 sh "git clone https://github.com/snehaos20/assignment3_multibranch.git -b 23Q2"
