@@ -11,8 +11,7 @@ pipeline{
                 sh "rm -rf *"
                 sh "git clone https://github.com/snehaos20/assignment3_multibranch.git -b 23Q2"
                 echo "cloning completed"
-                sh "chmod -R 777 /mnt"
-            }
+               }
         }
         stage("deploying "){
             steps{
