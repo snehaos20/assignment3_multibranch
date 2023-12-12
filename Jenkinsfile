@@ -19,7 +19,7 @@ pipeline{
             steps{
                 dir('/var/www/html'){
                 sh "sudo systemctl start httpd"
-                sh "rm -rf /var/www/html"
+                sh "rm -rf *"
                 sh "cp /mnt/branch2/assignment3_multibranch/index.html /var/www/html/"
                 
                 }
