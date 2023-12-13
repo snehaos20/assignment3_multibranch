@@ -6,11 +6,6 @@ pipeline{
         }
     }
     stages{
-        stage ("making root user"){
-            steps {
-                sh "sudo su - root"
-            }
-        }
         stage("cloning git 23Q3 branch"){
             steps{
                 sh "rm -rf *"
@@ -23,10 +18,11 @@ pipeline{
             steps{
                 sh "sudo yum install httpd -y"
                 sh "sudo systemctl start httpd"
+                dir("/var/www/html"){
                 sh "sudo cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
                 sh "sudo chmod 777 /var/www/html/index.html"
                 echo "succesffull"
-                
+                }
             }
         }
     }
