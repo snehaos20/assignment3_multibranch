@@ -16,7 +16,7 @@ pipeline{
         stage("deploying "){
             steps{
                 sh "sudo yum install httpd -y"
-                sh "service httpd start"
+                sh "sudo service httpd start"
                 dir('/var/www/html'){
                 sh "rm -rf *"
                 sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
