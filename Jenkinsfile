@@ -15,7 +15,7 @@ pipeline{
         }
         stage("deploying "){
             steps{
-                sh "yum install httpd -y"
+                sh "sudo yum install httpd -y"
                 dir('/var/www/html'){
                 sh "systemctl start httpd"
                 sh "rm -rf *"
