@@ -15,8 +15,7 @@ pipeline{
         }
         stage("deploying "){
             steps{
-                sh "chmod -R 777 /var/www/html/"
-            sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
+                sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
                 
                 
             }
