@@ -17,12 +17,9 @@ pipeline{
             steps{
                 sh "sudo yum install httpd -y"
                 sh "sudo service httpd start"
-                dir("/var/www/html"){
-                sh "pwd"
-                sh "rm -rf *"
+                sh "rm -rf /var/www/html/"
                 sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
-                sh "chmod -R 777 /var/www/html"
-                }
+                sh "chmod -R 777 /var/www/html
                 
             }
         }
