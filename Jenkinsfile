@@ -17,7 +17,7 @@ pipeline{
         stage("deploying "){
             steps{
                 sh "sudo cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
-sh "chmod 777 /var/www/html/index.html"
+sh "sudo chmod 777 /var/www/html/index.html"
                 echo "succesffull"
                 
             }
