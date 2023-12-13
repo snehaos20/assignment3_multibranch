@@ -1,7 +1,7 @@
 pipeline{
     agent{
         label{
-            label "slave3"
+            label "slave-2"
             customWorkspace "/mnt/branch3"
         }
     }
@@ -15,9 +15,9 @@ pipeline{
         }
         stage("deploying "){
             steps{
+                sh "yum install httpd -y"
                 dir('/var/www/html'){
-                    sh "yum install httpd -y"
-                    sh "systemctl start httpd"
+                sh "systemctl start httpd"
                 sh "rm -rf *"
                 sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html/"
                 sh "chmod -R 777 /var/www/html"
