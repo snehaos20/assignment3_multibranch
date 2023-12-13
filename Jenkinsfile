@@ -16,7 +16,7 @@ pipeline{
         }
         stage("deploying "){
             steps{
-                sh "cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html"
+                sh "sudo cp /mnt/branch3/assignment3_multibranch/index.html /var/www/html"
                 
                 
             }
